@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Nunito&display=swap"
+        rel="stylesheet">
+        <link rel="shortcut icon" href="img/tailwindcss-mark.d52e9897.svg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+        @keyframes cair {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes digitar {
+            from {
+                width: 0;
+                opacity: 1;
+            }
+
+            to {
+                width: 21.5ch;
+                opacity: 1;
+            }
+        }
+
+        @keyframes piscar {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .animate-cair {
+            animation: cair 1s forwards;
+        }
+
+        .animate-typing {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid white;
+            animation: digitar 3s steps(35) 0.5s forwards, piscar 0.5s step-end infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-sky-400 font-sans">
+
+    <header>
+        <div class="flex flex-col justify-center items-center gap-2 text-white"
+            style="background-image: url('/img/plus-tailwind.jpg'); background-size: cover; background-position: center; height: 911px; font-family: 'Momo Trust Display', sans-serif;">
+
+            <h1 class="text-[80px] opacity-0 -translate-y-12 animate-cair">Tailwind CSS</h1>
+
+            <h2 class="text-[30px] w-0 opacity-100 animate-typing">
+                Crie sites, sem sair do HTML...
+            </h2>
+
+            <a href="#titulo-info" class="mt-12 translate-y-12 animate-cair">
+                <p class="border-b-4 border-white rounded-[10%] p-1 text-[20px]">Veja mais</p>
+            </a>
+
+        </div>
+    </header>
+
+
+    <h1 id="titulo-info" class="text-center text-[40px] text-white mb-10 mt-10"
+        style="font-family: 'Momo Trust Display', sans-serif;">
+        Histórico de Criação
+    </h1>
+
+    <div class="flex flex-row p-5 h-[500px]">
+
+        <div class="w-[50%] text-white text-justify mr-[50px] m-[50px]">
+            <p class="text-[18px]" style="font-family: 'Nunito', sans-serif;">
+                O Tailwind CSS foi criado por Adam Wathan, Jonathan Reinink, David Hemphill e Steve Schoger em 2017. A
+                ideia surgiu a partir da insatisfação dos desenvolvedores com as limitações impostas pelos frameworks
+                CSS tradicionais, como Bootstrap e Foundation, que utilizavam componentes pré-construídos e muitas vezes
+                resultavam em sites visualmente semelhantes entre si.
+                Diferente desses frameworks, o Tailwind CSS foi desenvolvido com o objetivo de oferecer uma abordagem
+                utilitária e altamente personalizável para o design de interfaces. Em vez de depender de componentes
+                prontos, o Tailwind permite que os desenvolvedores construam seus próprios estilos diretamente no HTML,
+                utilizando classes utilitárias que controlam espaçamento, cores, tamanhos, tipografia e muito mais.
+                Essa filosofia proporciona maior liberdade criativa e controle total sobre o layout, tornando o
+                desenvolvimento mais rápido e eficiente. Além disso, o Tailwind se destaca por seu excelente suporte a
+                temas personalizados, integração com ferramentas modernas de build (como o PostCSS e o Vite) e ótimo
+                desempenho, já que remove automaticamente classes não utilizadas no processo de build final.
+                Com o passar dos anos, o Tailwind CSS se consolidou como um dos frameworks mais populares do mundo,
+                sendo amplamente adotado por empresas, freelancers e comunidades de código aberto que valorizam
+                produtividade, consistência visual e flexibilidade no desenvolvimento web.
+            </p>
+        </div>
+
+        <div class="w-[40%] h-auto mb-10 flex justify-center items-center">
+            <img src="img/adam-teaching.webp" alt="Uma foto de Adam Wathan ensinando"
+                class="w-full h-full rounded-tl-[80px] rounded-br-[80px] transition-transform duration-300 ease-out hover:scale-[1.02]">
+        </div>
+
+    </div>
+
+    <div class="flex flex-col items-center bg-black text-white h-[500px]">
+
+        <div class="w-[600px] text-center">
+            <h1 class="text-[40px] mb-2 mt-10" style="font-family: 'Momo Trust Display', sans-serif;">Motivação para Uso
+            </h1>
+            <p class="text-[18px]" style="font-family: 'Nunito', sans-serif;">
+                A principal motivação para o uso do Tailwind é agilidade no desenvolvimento.
+                Diferente de frameworks baseados em componentes prontos (como Bootstrap), o Tailwind oferece classes
+                utilitárias que permitem criar qualquer design do zero, sem sair do HTML.
+                Isso reduz a necessidade de criar arquivos CSS personalizados e evita conflitos de estilo.
+            </p>
+        </div>
+
+        <div class="grid justify-center mt-8 mb-8 gap-[200px] grid-cols-3">
+
+            <div
+                class="flex items-center justify-center w-[400px] p-5 gap-5 bg-[#333333] rounded-tl-[80px] rounded-br-[80px]">
+                <img src="/img/engrenagem.png" class="w-20 h-20" alt="">
+                <div class="flex flex-col">
+                    <h2 class="text-[20px] font-bold" style="font-family: 'Momo Trust Display', sans-serif;">
+                        Personalização Total</h2>
+                    <p class="text-[14px]" style="font-family: 'Nunito', sans-serif;">
+                        Modifique cores, tamanhos, espaçamentos e tipografias com extrema facilidade. O
+                        controle total do design está em suas mãos.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="flex items-center justify-center w-[400px] p-5 gap-5 bg-[#333333] rounded-tl-[80px] rounded-br-[80px]">
+                <img src="/img/foguete-branco.png" class="w-20 h-20" alt="">
+                <div class="flex flex-col">
+                    <h2 class="text-[20px] font-bold" style="font-family: 'Momo Trust Display', sans-serif;">Agilidade e
+                        Responsividade</h2>
+                    <p class="text-[14px]" style="font-family: 'Nunito', sans-serif;">
+                        Crie protótipos e interfaces completas diretamente no HTML. Classes
+                        específicas garantem a responsividade perfeita em qualquer tela.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="flex items-center justify-center w-[400px] p-5 gap-5 bg-[#333333] rounded-tl-[80px] rounded-br-[80px]">
+                <img src="/img/ferramentas.png" class="w-[80px] h-[80px]" alt="">
+                <div class="flex flex-col">
+                    <h2 class="text-[20px] font-bold" style="font-family: 'Momo Trust Display', sans-serif;">Leveza e
+                        Otimização</h2>
+                    <p class="text-[14px]" style="font-family: 'Nunito', sans-serif;">
+                        O build final remove classes não utilizadas, resultando em um CSS super leve.
+                        Conte com o suporte de uma grande comunidade global.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <h1 id="titulousa" class="flex justify-center text-[43px] text-white mb-10 mt-10"
+        style="font-family: 'Momo Trust Display', sans-serif;">
+        Usabilidade
+    </h1>
+
+    <div class="flex flex-col items-center justify-center bg-black text-white min-h-[1000px] py-10">
+
+        <div class="grid grid-cols-2 gap-[100px] justify-center items-start">
+
+            <div
+                class="flex flex-col items-center justify-start w-[400px] h-[350px] p-7 bg-[#333333] rounded-[20px] transition-transform duration-500 ease-out hover:scale-[1.02] hover:bg-[#3a3a3a]">
+                <img src="/img/html-code.webp" alt="HTML e classes utilitárias"
+                    class="w-[120px] h-[110px] mb-4 rounded-[10%]">
+                <h2 class="text-[26px] mb-2" style="font-family: 'Momo Trust Display', sans-serif;">Estilização Rápida
+                </h2>
+                <p class="text-[16px] leading-6 text-center" style="font-family: 'Nunito', sans-serif;">
+                    O Tailwind permite estilizar elementos direto no HTML com classes utilitárias, acelerando o
+                    processo e evitando CSS manual.
+                </p>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-start w-[400px] h-[350px] p-7 bg-[#333333] rounded-[20px] transition-transform duration-500 ease-out hover:scale-[1.02] hover:bg-[#3a3a3a]">
+                <img src="/img/javascript-code-computer-language-programming-internet-text-editor-components-display-screen.webp"
+                    alt="Configuração de projeto" class="w-[120px] h-[110px] mb-4 rounded-[10%]">
+                <h2 class="text-[26px] mb-2" style="font-family: 'Momo Trust Display', sans-serif;">Personalização</h2>
+                <p class="text-[16px] leading-6 text-center" style="font-family: 'Nunito', sans-serif;">
+                    O arquivo tailwind.config.js permite ajustar cores, fontes, tamanhos e espaçamentos, criando um
+                    visual único pra cada projeto.
+                </p>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-start w-[400px] h-[350px] p-7 bg-[#333333] rounded-[20px] transition-transform duration-500 ease-out hover:scale-[1.02] hover:bg-[#3a3a3a]">
+                <img src="/img/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f623243443051727132756c77592f67697068792e676966.webp"
+                    alt="Design responsivo" class="w-[120px] h-[110px] mb-4 rounded-[10%]">
+                <h2 class="text-[26px] mb-2" style="font-family: 'Momo Trust Display', sans-serif;">Responsividade</h2>
+                <p class="text-[16px] leading-6 text-center" style="font-family: 'Nunito', sans-serif;">
+                    Prefixos como sm:, md:, lg: e xl: facilitam a adaptação do layout para diferentes dispositivos e
+                    tamanhos de tela.
+                </p>
+            </div>
+
+            <div
+                class="flex flex-col items-center justify-start w-[400px] h-[350px] p-7 bg-[#333333] rounded-[20px] transition-transform duration-500 ease-out hover:scale-[1.02] hover:bg-[#3a3a3a]">
+                <img src="/img/redirecionamento-301-270x173.webp" alt="Otimização e integração"
+                    class="w-[120px] h-[110px] mb-4 rounded-[10%]">
+                <h2 class="text-[26px] mb-2" style="font-family: 'Momo Trust Display', sans-serif;">Otimização</h2>
+                <p class="text-[16px] leading-6 text-center" style="font-family: 'Nunito', sans-serif;">
+                    O build remove classes não usadas, deixando o site leve. Além disso, o Tailwind se integra bem
+                    com React, Vue e Next.js.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="flex flex-col items-center justify-center bg-sky-400 text-white">
+
+        <h1 class="text-[40px] mt-10 mb-2" style="font-family: 'Momo Trust Display', sans-serif;">
+            Documentação
+        </h1>
+
+        <div class="flex gap-[200px] mt-5">
+
+            <div class="flex flex-col justify-center items-center w-[400px]">
+                <p class="text-[24px] text-center">
+                    Ela apresenta cada classe utilitária, exemplos de código e uma seção interativa para testar estilos
+                    ao vivo.
+                    Há também a ferramenta Tailwind Playground, que permite experimentar o framework online sem
+                    instalação.
+                </p>
+            </div>
+
+            <img src="img/tailwind-css.jpg" class="w-[600px] h-[400px] rounded-bl-[40px] rounded-tr-[40px] hover:scale-[1.01]">
+
+        </div>
+
+        <div class="flex gap-[200px] mt-10 mb-10 items-center">
+
+            <img src="img/card.09319a01.jpg" class="w-[600px] h-[400px] rounded-bl-[40px] rounded-tr-[40px] hover:scale-[1.01]">
+
+            <div class="flex flex-col justify-center items-center w-[400px] ">
+                <p class="text-[28px] mb-10 text-center">
+                    A documentação do Tailwind está disponivel em:
+                </p>
+                <a class="hover:scale-[1.01]" href="https://tailwindcss.com/docs/installation/using-vite" target="_blank">
+                    <h2
+                        class="text-[20px] border-4 border-gray-300 bg-gray-300 px-2 py-1 rounded-bl-[20px] rounded-tr-[20px] text-sky-400 hover:scale-[1.01]">
+                        Clique AQUI!
+                    </h2>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="bg-black text-white py-[60px] px-[40px] text-center">
+
+        <div class="flex flex-col align-center justify-center">
+            <h1 class="text-[40px] tracking-[1px] mb-[8px]" style="font-family: 'Momo Trust Display', sans-serif;">
+                EMPRESA RESPONSÁVEL
+            </h1>
+
+            <h2 class="text-[30px] font-normal mb-[40px]" style="font-family: 'Nunito', sans-serif;">
+                Tailwind Labs Inc.
+            </h2>
+
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-[30px] max-w-[900px] mx-auto text-left">
+
+            <img src="img/tailwindcss-mark.d52e9897.svg" alt="Logo Tailwind CSS hover:scale-[1.05]"
+                class="w-[300px] h-auto rounded-[15px] bg-white p-[15px] flex-shrink-0 hover:scale-[1.02]" />
+
+            <p class="max-w-[550px] text-[18px] leading-[1.6]" style="font-family: 'Nunito', sans-serif;">
+                A Tailwind Labs Inc. é a empresa responsável pela criação e manutenção do Tailwind CSS,
+                um dos frameworks de CSS mais populares do mundo. Fundada em 2017 por Adam Wathan e
+                Steve Schoger, a empresa tem sede no Canadá e opera de forma remota, com uma equipe
+                distribuída em diferentes países.
+                <br><br>
+                O principal objetivo da Tailwind Labs é desenvolver ferramentas que facilitem a
+                criação de interfaces modernas e personalizáveis. Seu produto mais conhecido, o
+                Tailwind CSS, adota a filosofia “utility-first”, permitindo que desenvolvedores
+                criem designs totalmente personalizados usando classes utilitárias em vez de
+                estilos prontos.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="container-comunidade flex flex-col justify-center items-center text-white">
+
+        <h1 class="font-['Momo_Trust_Display'] text-[40px] mt-10 mb-2">COMUNIDADE DE DESENVOLVIMENTO</h1>
+
+        <div class="grid-comu grid grid-cols-3 gap-[200px] mt-8 mb-8 justify-center items-center">
+
+            <div
+                class="comu opacity-0 translate-y-[50px] transition-all duration-700 ease-in-out flex flex-col items-center justify-center gap-4 p-5 bg-[#1b2886] rounded-tl-[80px] rounded-br-[80px] w-[400px]">
+
+                <img  src="img/People.png" alt="">
+
+                <div class="corpo-comu flex flex-col">
+                    <h2 class="text-[20px] font-bold">Comunidade Tailwind</h2>
+                    <p class="text-[14px]">A comunidade Tailwind CSS reúne devs e designers globalmente. É um grupo
+                        ativo e colaborativo para troca de ideias, dúvidas e ajuda. O principal ponto de encontro é o
+                        Discord, e o GitHub é usado para contribuir diretamente com melhorias no framework.</p>
+                </div>
+
+            </div>
+
+            <div
+                class="comu opacity-0 translate-y-[50px] transition-all duration-700 ease-in-out flex flex-col items-center justify-center gap-4 p-5 bg-[#1b2886] rounded-tl-[80px] rounded-br-[80px] w-[400px]">
+
+                <img src="img/Human Resources.png" alt="">
+
+                <div class="corpo-comu flex flex-col">
+                    <h2 class="text-[20px] font-bold">Recursos e participação</h2>
+                    <p class="text-[14px]">A comunidade compartilha temas, plugins e componentes prontos, facilitando o
+                        trabalho de todos. Qualquer pessoa pode participar nos fóruns, Discord ou GitHub. Muitos
+                        divulgam projetos e dicas em redes como Reddit, impulsionando o crescimento e uso do Tailwind.
+                    </p>
+                </div>
+
+            </div>
+
+            <div
+                class="comu opacity-0 translate-y-[50px] transition-all duration-700 ease-in-out flex flex-col items-center justify-center gap-4 p-5 bg-[#1b2886] rounded-tl-[80px] rounded-br-[80px] w-[400px]">
+
+                <img src="img/Bookmark.png" alt="">
+
+                <div class="corpo-comu flex flex-col">
+                    <h2 class="text-[20px] font-bold">Cultura e importância</h2>
+                    <p class="text-[14px]">A comunidade valoriza muito a colaboração, o aprendizado contínuo e o diálogo
+                        aberto. Participar deste grupo é inovar, compartilhar conhecimento e fortalecer o
+                        desenvolvimento web moderno. É um ambiente essencial para o crescimento do framework.</p>
+                </div>
+
+            </div>
+
+            <script src="script.js"></script>
+
+        </div>
+
+
+        <div class="bg-black text-white flex flex-col items-center px-5 py-5 w-full">
+
+            <h1 class="mt-10 mb-2 text-[40px]" style="font-family: 'Momo Trust Display'">
+                SUPORTE AO USO DA FERRAMENTA
+            </h1>
+
+            <h2 class="pb-2 text-[32px] style=" font-family: 'Momo Trust Display'">
+                Domine o “Tailwind CSS” com Suporte “Extra”
+            </h2>
+
+            <p class=" text-center text-[14px] max-w-2xl">
+                Deixe para trás o CSS tradicional. Nossos especialistas aceleram seu projeto com o Utility-First
+                </p>
+
+                <h1 class="text-white pb-2 text-[30px] mt-8">
+                    Assinaturas de Suporte
+                </h1>
+
+                <div class="flex flex-wrap justify-center gap-7 pb-5">
+
+                    <div
+                        class="bg-gray-200 text-[#222] w-[300px] h-[350px] rounded-[10px] font-medium p-2 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out hover:scale-[1.05] hover:shadow-lg">
+                        <h1 class="text-[24px] font-bold">Extra</h1>
+                        <p class="text-center mt-2">
+                            Vantagens: Blocos de UI. Mais de 500 blocos de UI com design profissional e totalmente
+                            responsivo.
+                            Kit de UI. Um kit inicial React criado com Tailwind CSS que inclui uma coleção de belos
+                            blocos
+                            de UI.
+                        </p>
+                        <h3 class="pt-8 text-lg font-semibold">R$ 300,00</h3>
+                        <button
+                            class="mt-3 bg-[#1b2886] border-2 border-[#1b2886] rounded-[45px] px-3 py-1 text-white font-bold hover:scale-110 hover:shadow-lg transition-transform duration-300 ease-in-out">
+                            Assinar
+                        </button>
+                    </div>
+
+                    <div
+                        class="bg-gray-200 text-[#222] w-[300px] h-[350px] rounded-[10px] font-medium p-2 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out hover:scale-[1.05] hover:shadow-lg">
+                        <h1 class="text-[24px] font-bold">Deluxe</h1>
+                        <p class="text-center mt-2">
+                            Vantagens: Inclui o plano Extra, + Obtenha acesso para toda a sua equipe — as licenças de
+                            equipe
+                            incluem acesso para até 25 pessoas, atendendo até mesmo às maiores equipes da sua empresa.
+                        </p>
+                        <h3 class="pt-8 text-lg font-semibold">R$ 900,00</h3>
+                        <button
+                            class="mt-3 bg-[#1b2886] border-2 border-[#1b2886] rounded-[45px] px-3 py-1 text-white font-bold hover:scale-110 hover:shadow-lg transition-transform duration-300 ease-in-out">
+                            Assinar
+                        </button>
+                    </div>
+
+                    <div
+                        class="bg-gray-200 text-[#222] w-[300px] h-[350px] rounded-[10px] font-medium p-2 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out hover:scale-[1.05] hover:shadow-lg">
+                        <h1 class="text-[24px] font-bold">Plus</h1>
+                        <p class="text-center mt-2">
+                            Vantagens: Inclui o plano Extra, + Obtenha acesso para toda a sua equipe — as licenças de
+                            equipe
+                            incluem acesso para até 10 pessoas, atendendo até mesmo às maiores equipes da sua empresa.
+                        </p>
+                        <h3 class="pt-8 text-lg font-semibold">R$ 500,00</h3>
+                        <button
+                            class="mt-3 bg-[#1b2886] border-2 border-[#1b2886] rounded-[45px] px-3 py-1 text-white font-bold hover:scale-110 hover:shadow-lg transition-transform duration-300 ease-in-out">
+                            Assinar
+                        </button>
+                    </div>
+
+                </div>
+        </div>
+
+        <footer class="bg-[#415aca] pb-0 pt-[50px] w-full ">
+
+            <div class="flex justify-center items-center text-center">
+                <div class="max-w-[1400px] mx-auto text-center">
+
+                    <div class="grid grid-cols-3 gap-4 text-left items-start w-[1200px]">
+
+                        <div>
+                            <h4 class="text-[22px] text-white mb-[20px] font-medium uppercase">Empresa</h4>
+                            <ul class="list-none">
+                                <li class="my-[10px]"><a href="#"
+                                        class="text-[16px] capitalize text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">Quem
+                                        somos</a></li>
+                                <li class="my-[10px]"><a href="#"
+                                        class="text-[16px] capitalize text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">nossos
+                                        serviços</a></li>
+                                <li class="my-[10px]"><a href="#"
+                                        class="text-[16px] capitalize text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">política
+                                        de privacidade</a></li>
+                                <li class="my-[10px]"><a href="#"
+                                        class="text-[16px] capitalize text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">programa
+                                        de afiliados</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-[22px] text-white mb-[20px] font-medium uppercase">Obter ajuda</h4>
+                            <ul class="list-none">
+                                <li class="my-[10px]"><a href="#"
+                                        class="text-[16px] capitalize text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">FAQ</a>
+                                </li>
+                                <li class="my-[10px]"><a href="#"
+                                        class="text-[16px] capitalize text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">devoluções</a>
+                                </li>
+                                <li class="my-[10px]"><a href="#"
+                                        class="text-[16px] capitalize text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">Status
+                                        De Pedido</a></li>
+                                <li class="my-[10px]"><a href="#"
+                                        class="text-[16px] capitalize text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">Opções
+                                        De Pagamento</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-[22px] text-white mb-[20px] font-medium uppercase">Referências</h4>
+                            <ul class="list-none">
+                                <li class="my-[10px]"><a href="https://tailwindcss.com/"
+                                        class="text-[16px] text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">https://tailwindcss.com/</a>
+                                </li>
+                                <li class="my-[10px]"><a href="https://github.com/tailwindlabs/tailwindcss"
+                                        class="text-[16px] text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">https://github.com/tailwindlabs/tailwindcss</a>
+                                </li>
+                                <li class="my-[10px]"><a href="https://www.youtube.com/watch?v=dHwY5lRfkoQ"
+                                        class="text-[16px] text-white no-underline font-light block transition-all duration-300 ease-in-out hover:text-[#cecdcd] hover:pl-[10px]">https://www.youtube.com/watch?v=dHwY5lRfkoQ</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex justify-center items-center text-center text-white mt-[30px]">
+                <p>Todos os direitos reservados TeraTeam Co. ©</p>
+            </div>
+        </footer>
+
+
+</body>
+
+</html>
