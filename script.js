@@ -1,11 +1,14 @@
 const comus = document.querySelectorAll('.comu');
 
 window.addEventListener('scroll', () => {
-  comus.forEach(el => {
+  comus.forEach((el, index) => {
     const rect = el.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100) {
-      el.classList.remove('opacity-0', 'translate-y-[50px]');
-      el.classList.add('opacity-100', 'translate-y-0');
+
+    if (rect.top < window.innerHeight - 100 && el.classList.contains('opacity-0')) {
+      setTimeout(() => {
+        el.classList.remove('opacity-0', 'translate-y-[50px]');
+        el.classList.add('opacity-100', 'translate-y-0');
+      }, index * 200);
     }
   });
 });
